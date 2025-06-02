@@ -77,6 +77,12 @@
       crossorigin="anonymous"
     ></script>
 
+    
+    <scriptAdd commentMore actions
+      type="text/javascript"
+      src="{{ url_for('static', filename='index.js') }}"
+    ></script>
+
 {% block javascript %}
     <script type="text/javascript">
       function deleteNote(noteId) {
