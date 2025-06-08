@@ -1,21 +1,36 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
-%}
-<h1 align="center">Notes</h1>
-<ul class="list-group list-group-flush" id="notes">
-  {% for note in user.notes %}
-  <li class="list-group-item">
-    {{ note.data }}
-    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </li>
-  {% endfor %}
-</ul>
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Welcome, {{ user.first_name}}</h1>
+
 <form method="POST">
-  <textarea name="note" id="note" class="form-control"></textarea>
-  <br />
-  <div align="center">
+    <div class="mb-3">
+        <label for="note" class="form-label">New Note</label>
+        <textarea name="note" id="note" class="form-control" rows="3" required></textarea>
+    </div>
     <button type="submit" class="btn btn-primary">Add Note</button>
-  </div>
 </form>
+
+<hr>
+
+<!-- START the note loop -->
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+  {% for note in user.notes %}
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <p class="card-text">{{ note.data }}</p>
+        </div>
+        <div class="card-footer text-end">
+          <form method="POST" action="{{ url_for('views.delete_note', note_id=note.id) }}">
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+<!-- END the note loop -->
+
 {% endblock %}

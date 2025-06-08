@@ -1,0 +1,17 @@
+.card {
+  transition: transform 0.3s ease;
+  border-left: 4px solid #0077b6;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.btn-primary {
+  background-color: #00b4d8;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0096c7;
+}
