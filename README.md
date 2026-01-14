@@ -1,6 +1,8 @@
 # 📝 NoteAnchor
 
-**NoteAnchor** is a secure, full-stack note-taking web application that allows users to register, log in, and manage their personal notes. Built using **Flask**, **Python**, and **SQLite**, this project demonstrates strong backend architecture, user authentication, server-side form handling, and session management — all tied together with a clean, responsive frontend.
+**NoteAnchor** is a secure, full-stack note-taking web application that allows users to register, log in, and manage their personal notes. Built using **Flask**, **Python**, and **SQLite**, this project demonstrates strong backend architecture, user authentication, server-side form handling, and session management, all tied together with a clean, responsive frontend.
+
+### Check out the [Demo Video](youtube.com/watch?v=ggebMio51bU&ab_channel=InnovationByKhalil) to see it in action!
 
 ---
 
